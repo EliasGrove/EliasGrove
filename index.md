@@ -3,24 +3,32 @@ title: Elias Grove
 layout: layout.njk
 ---
 
-# ✨ Elias Grove
+# 🕯️ Elias Grove
 
-**Author. Storyteller. Dreamer.**
+**Novelist. Dream-walker. Collector of shadows.**
 
-Welcome to my site. I write literary fiction, short stories, and occasional thoughts on writing.
+> *"The sleep of reason produces monsters..."*  
+> – Francisco Goya
 
-## 📚 Books
+---
+
+## 📖 Works
 
 - *The Glass Orchard* – 2023  
 - *Dreamless Rivers* – Coming Soon  
 - *Shards of Silence* – WIP
 
-## 📝 Blog
+---
 
-[Visit the blog](./posts/)
+## ✒️ Journal
 
-## 📬 Contact
+Thoughts on darkness, creativity, and the space between stories.  
+[Read the blog](./posts/)
 
-- Email: [a.elias.grove@gmail.com](mailto:a.elias.grove@gmail.com)  
-- Twitter: [@eliasgrove](https://twitter.com/eliasgrove)  
-- Goodreads: [Elias Grove](https://www.goodreads.com/)
+---
+
+## 🕊 Contact
+
+- 📧 [a.elias.grove@gmail.com](mailto:a.elias.grove@gmail.com)  
+- 🐦 [Twitter](https://twitter.com/eliasgrove)  
+- 📚 [Goodreads](https://www.goodreads.com/)
