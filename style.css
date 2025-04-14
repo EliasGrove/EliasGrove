@@ -1,10 +1,24 @@
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("css");
-  return {
-    dir: {
-      input: "src",
-      includes: "_includes",
-      output: "dist"
-    }
-  };
-};
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 2rem;
+}
+
+a {
+  color: #90caf9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+}
