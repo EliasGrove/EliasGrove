@@ -1,60 +1,26 @@
 ---
-title: Welcome to Elias Grove
-layout: base.njk
+title: Elias Grove
+layout: layout.njk
 ---
 
 # ✨ Elias Grove
 
 **Author. Storyteller. Dreamer.**
 
-Welcome to my corner of the internet. I write literary fiction, short stories, and the occasional blog post about life, art, and creativity.
+Welcome to my site. I write literary fiction, short stories, and occasional thoughts on writing.
 
 ## 📚 Books
 
-- *The Glass Orchard* – 2023
-- *Dreamless Rivers* – Coming Soon
+- *The Glass Orchard* – 2023  
+- *Dreamless Rivers* – Coming Soon  
 - *Shards of Silence* – WIP
 
-## 📝 Latest Posts
+## 📝 Blog
 
-Check out the [blog](/blog) for my thoughts, inspiration, and behind-the-scenes.
+[Visit the blog](./blog/)
 
-## 📬 Stay in Touch
+## 📬 Contact
 
-- 📧 [a.elias.grove@gmail.com](mailto:a.elias.grove@gmail.com)
-- 🐦 [Twitter](https://twitter.com/eliasgrove)
-- 📚 [Goodreads](https://www.goodreads.com/)
-
-Thanks for stopping by — let’s stay connected.---
-layout: layout.njk
-title: Home
----
-
-# Welcome to My Author Blog
-
-This is where I share writing updates, thoughts, and behind-the-scenes.
-/* Dark mode styling */
-body {
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: 'Helvetica Neue', sans-serif;
-}
-
-a {
-  color: #90caf9;
-}
-
-a:hover {
-  color: #ffffff;
-}
-
-h1, h2, h3, h4 {
-  color: #ffffff;
-}
-
-code, pre {
-  background-color: #1e1e1e;
-  color: #c3e88d;
-  padding: 0.3em;
-  border-radius: 4px;
-}
+- Email: [a.elias.grove@gmail.com](mailto:a.elias.grove@gmail.com)  
+- Twitter: [@eliasgrove](https://twitter.com/eliasgrove)  
+- Goodreads: [Elias Grove](https://www.goodreads.com/)
