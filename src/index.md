@@ -33,3 +33,28 @@ title: Home
 # Welcome to My Author Blog
 
 This is where I share writing updates, thoughts, and behind-the-scenes.
+/* Dark mode styling */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: #90caf9;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+  color: #ffffff;
+}
+
+code, pre {
+  background-color: #1e1e1e;
+  color: #c3e88d;
+  padding: 0.3em;
+  border-radius: 4px;
+}
