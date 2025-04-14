@@ -7,3 +7,14 @@ module.exports = function(eleventyConfig) {
   };
 };
 
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("css");
+
+  return {
+    dir: {
+      input: "src",
+      includes: "_includes",
+      output: "dist"
+    }
+  };
+};
