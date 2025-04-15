@@ -8,7 +8,7 @@ pageClass: contact # <--- Sets the body class for this page
 
 If you’d like to reach out feel free to contact me.
 
-I do my best to reply in less than a day. If I don't feel free to shout at me on X or Instagram.
+I do my best to reply to all queries in less than a day.
 
 ---
 ## Reach Me {# Use H2 here now #}
@@ -17,5 +17,6 @@ I do my best to reply in less than a day. If I don't feel free to shout at me on
 * Instagram: [@a.elias.grove](https://instagram.com/a.elias.grove)
 
 ---
+
 
 Thank you for stopping by
