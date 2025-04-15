@@ -14,8 +14,8 @@ I do my best to reply to every email, if I don't within a day or so feel free to
 ## 📬 Reach Me Via:
 
 - Email: [contact@eliasgrove.com](mailto:contact@eliasgrove.com)  
-- X: [@elias_grove]([[https://x.com/elias_grove]
-- Instagram: a.elias.grove
+- X: [@elias_grove](https://twitter.com/elias_grove)  
+- Instagram: [@a.elias.grove](https://instagram.com/a.elias.grove)
   
 ---
 
