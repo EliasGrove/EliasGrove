@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | Elias Grove</title>
+    <title>{{ title }} | Elias Grove</title> {# Adds site name to title #}
     <link rel="stylesheet" href="/css/style.css">
+    {# Links to Google Fonts are in the CSS via @import #}
 </head>
 {# Adds a class like "page-home" or "page-contact" to the body #}
 <body class="page-{{ pageClass | default('default') }}">
@@ -12,9 +13,9 @@
         <header>
             <h1><a href="/">Elias Grove</a></h1>
             <nav>
-                <a href="/">Home</a>
-                <a href="/contact/">Contact</a>
-                {# Add other nav links here if needed #}
+              <a href="/">Home</a>
+              <a href="/blog/">Random</a>  {# <--- Changed text to Random #}
+              <a href="/contact/">Contact</a>
             </nav>
         </header>
 
@@ -24,7 +25,7 @@
         </main>
 
         <footer>
-            <p>&copy; {% year %} Elias Grove</p>
+            <p>&copy; {% year %} Elias Grove</p> {# Eleventy shortcode for year #}
         </footer>
     </div>
 
