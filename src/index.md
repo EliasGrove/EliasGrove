@@ -1,18 +1,18 @@
 ---
 title: Home
 layout: layout.njk
-pageClass: home # <--- Sets the body class for this page
+pageClass: home
 ---
 
 # Elias Grove
 
 I write fiction. You can find my work below.
 
-Check my [X @elias_grove](https://twitter.com/elias_grove) or my blogs if you enjoy ranting.
+Check my [X @elias_grove](https://twitter.com/elias_grove) if you enjoy ranting.
 
-## Books
+## Works {# Changed from Books #}
 
-* **Concerning the Vampire of the Vieux Carré** — *Short Stories*
+* **Concerning the Vampire of the Vieux Carré** — *Short Story* {# Changed from Short Stories #}
 * **For All the Goodbyes** — *Novel*
 * **The Nugget** — *Novel*
 * **Ghostwriter** — *WIP*
