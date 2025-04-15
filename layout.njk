@@ -7,8 +7,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-  <main>
-    {{ content | safe }}
-  </main>
+  <div class="container">
+    <header>
+      <h1><a href="/">Elias Grove</a></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog/">Journal</a>
+        <a href="/contact/">Contact</a>
+        <a href="/reading/">Reading</a>
+      </nav>
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer>
+      <p>&copy; {{ "now" | date("yyyy") }} Elias Grove</p>
+    </footer>
+  </div>
+
+  <!-- Page fade-in effect -->
+  <script>
+    document.body.style.opacity = 0;
+    window.onload = () => {
+      document.body.style.transition = "opacity 0.8s ease";
+      document.body.style.opacity = 1;
+    };
+  </script>
 </body>
 </html>
