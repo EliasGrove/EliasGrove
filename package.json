@@ -1,16 +1,14 @@
 {
-  "name": "my-blog",
+  "name": "eliasgrove-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Author website for Elias Grove",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "start": "eleventy --serve"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Elias Grove",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^2.0.1" // Use a specific recent version
   }
 }
