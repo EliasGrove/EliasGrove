@@ -12,7 +12,8 @@
       <h1><a href="/">Elias Grove</a></h1>
       <nav>
         <a href="/">Home</a>
-        <a href="/blog/">Journal</a>
+        {# Only show this if you add the pages #}
+        {# <a href="/blog/">Journal</a> #}
         <a href="/contact/">Contact</a>
         <a href="/reading/">Reading</a>
       </nav>
@@ -27,7 +28,6 @@
     </footer>
   </div>
 
-  <!-- Page fade-in effect -->
   <script>
     document.body.style.opacity = 0;
     window.onload = () => {
