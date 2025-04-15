@@ -40,3 +40,34 @@
     </div>
   </div>
 </section>
+<!-- Contact Section -->
+<section id="contact" class="bg-white text-black py-20 px-6 md:px-20">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-serif mb-10 fade-in">Contact</h2>
+    <p class="text-lg mb-8 fade-in" style="animation-delay: 0.2s;">
+      Reach out via email or find me on social media:
+    </p>
+    <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
+      <li>
+        <a href="mailto:contact@eliasgrove.com" class="hover:underline">
+          📧 contact@eliasgrove.com
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/elias_grove" target="_blank" class="hover:underline">
+          🐦 @elias_grove
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/a.elias.grove" target="_blank" class="hover:underline">
+          📷 @a.elias.grove
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-gray-400 text-center text-sm py-6">
+  © 2025 Elias Grove. All rights reserved.
+</footer>
