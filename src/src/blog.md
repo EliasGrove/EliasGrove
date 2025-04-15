@@ -1,6 +1,8 @@
 ---
 title: Journal
 layout: layout.njk
+tags: post
+templateEngineOverride: njk
 ---
 
 # Journal
@@ -16,5 +18,4 @@ Fragments. Notes. Stuff I didn’t want to forget.
 {{ post.templateContent | truncate(180, true, "...") }}
 
 ---
-
 {% endfor %}
