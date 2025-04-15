@@ -4,18 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elias Grove</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Crimson Pro', serif;
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
       height: 100vh;
-      /* Removed text-transform: lowercase; */
       cursor: url('css/nugget.png') 16 16, auto;
       background-color: #1a1a1a;
     }
@@ -43,7 +42,7 @@
       z-index: 0;
     }
     #landing .overlay {
-        display: none;
+      display: none;
     }
     .content {
       position: relative;
@@ -65,11 +64,11 @@
     .content h3,
     .content p,
     .content li {
-        transition: transform 0.3s ease, text-shadow 0.3s ease;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
     .content a {
-        display: inline-block;
-        transition: transform 0.3s ease, text-shadow 0.3s ease;
+      display: inline-block;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
     .content h1:hover,
     .content h2:hover,
@@ -77,27 +76,27 @@
     .content p:hover,
     .content li:hover,
     .content a:hover {
-        transform: translateY(-4px);
-        text-shadow: 2px 5px 7px rgba(0, 0, 0, 0.7);
+      transform: translateY(-4px);
+      text-shadow: 2px 5px 7px rgba(0, 0, 0, 0.7);
     }
     /* === HOVER EFFECT END === */
 
     #landing {
-        background-color: #000000; /* Black background */
+      background-color: #000000;
     }
 
     #works .column-header {
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-        text-transform: uppercase; /* Keep column headers uppercase for style */
-        letter-spacing: 0.05em;
-        font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 1.125rem;
     }
-     #works .work-title {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
-     }
+    #works .work-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
@@ -129,14 +128,14 @@
         </div>
 
         <div class="w-full md:w-1/3 px-2 text-center">
-           <h3 class="column-header">Novels</h3>
-           <p class="work-title">For All the Goodbyes</p>
+          <h3 class="column-header">Novels</h3>
+          <p class="work-title">For All the Goodbyes</p>
           <p class="work-title">The Nugget</p>
         </div>
 
         <div class="w-full md:w-1/3 px-2 text-center">
-           <h3 class="column-header">Works In Progress</h3>
-           <p class="work-title">Ghostwriter</p>
+          <h3 class="column-header">Works In Progress</h3>
+          <p class="work-title">Ghostwriter</p>
           <p class="work-title">Tochmarc</p>
         </div>
 
@@ -147,7 +146,7 @@
   <section id="contact" style="background-image: url('css/El_coloso.jpg');">
     <div class="overlay"></div>
     <div class="content">
-       <h2 class="text-4xl font-serif mb-6 fade-in">Contact</h2>
+      <h2 class="text-4xl font-serif mb-6 fade-in">Contact</h2>
       <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
         <li>📧 <a href="mailto:contact@eliasgrove.com" class="underline">contact@eliasgrove.com</a></li>
         <li>🐦 <a href="https://twitter.com/elias_grove" class="underline">elias_grove</a></li>
