@@ -1,39 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@font-face {
+  font-family: "Arabic Typesetting";
+  src: local("Arabic Typesetting"), url("https://fonts.cdnfonts.com/s/16207/arabtype.woff") format("woff");
+}
 
 body {
-  background-image: url('/css/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-
-  background-color: #111; /* fallback color */
-  color: #e0e0e0;
-  font-family: 'IM Fell English', serif;
-  margin: 2rem;
+  background-color: #0e0e0e;
+  color: #eaeaea;
+  font-family: 'Arabic Typesetting', serif;
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.6;
 }
 
-a {
+header, footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+nav a {
   color: #d4af37;
   text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
 }
 
-a:hover {
+nav a:hover {
   color: #ffffff;
 }
 
 h1, h2, h3 {
   color: #ffffff;
+  text-shadow: 0 0 5px #000;
   font-size: 2.5rem;
-  text-shadow: 1px 1px 2px #000;
+}
+
+a {
+  color: #f0c674;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
 }
 
 main {
-  max-width: 720px;
+  max-width: 800px;
   margin: auto;
   padding: 2rem;
-  background-color: rgba(17, 17, 17, 0.88); /* dark translucent overlay */
+  background-color: rgba(15, 15, 15, 0.9);
   border: 1px solid #333;
-  box-shadow: 0 0 20px rgba(0,0,0,0.8);
-  backdrop-filter: blur(3px);
+  border-radius: 6px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
