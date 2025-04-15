@@ -1,99 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elias Grove</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
-      height: 100vh;
-    }
-    section {
-      scroll-snap-align: start;
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 1.5rem;
-      color: white;
-      background-size: cover;
-      background-position: center;
-    }
-    h1, h2, h3 {
-      font-family: 'EB Garamond', serif;
-    }
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
-    .content {
-      position: relative;
-      z-index: 10;
-      max-width: 800px;
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn ease 2s forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>elias grove - author website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* --- Basic Reset & Font --- */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            /* Enforce lowercase globally */
+            text-transform: lowercase;
+        }
+
+        h1, h2, h3 {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.25rem; /* approx 4xl */
+            line-height: 2.5rem;
+            font-weight: 700; /* bold */
+            margin-bottom: 1rem; /* Tailwind mb-4 */
+        }
+
+        p {
+            font-size: 1.125rem; /* lg */
+            line-height: 1.75rem;
+        }
+
+        /* --- Scroll Snap Container (Body) --- */
+        body {
+             /* === CUSTOM NUGGET CURSOR === */
+             /* Assumes nugget.png is in the css folder */
+             /* Using 16 16 hotspot for assumed 32x32px image */
+            cursor: url('css/nugget.png') 16 16, auto;
+
+            /* --- Keep existing body styles below --- */
+            margin: 0; /* (Already defined above, technically redundant but okay) */
+            font-family: 'Inter', sans-serif; /* (Already defined above) */
+            text-transform: lowercase; /* (Already defined above) */
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            background-color: #1a1a1a; /* Dark default background */
+            color: white; /* Default text color */
+        }
+
+        /* --- Scroll Snap Items (Sections) --- */
+        section {
+            height: 100vh;
+            min-height: 100vh;
+            scroll-snap-align: start;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        section.is-visible {
+            opacity: 1;
+        }
+
+        /* --- Hover Effect for Lettering --- */
+        section h1:hover,
+        section h2:hover,
+        section h3:hover,
+        section p:hover {
+            filter: brightness(1.3);
+            transition: filter 0.3s ease;
+        }
+        section .content-wrapper > *:hover {
+             filter: brightness(1.3);
+             transition: filter 0.3s ease;
+         }
+
+        /* --- Section Specific Backgrounds & Styles --- */
+        #section1 {
+            background-color: #2c3e50;
+        }
+        #section1 h1 {
+             font-size: 3rem;
+             margin-bottom: 0.5rem;
+        }
+        #section1 p {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #section2 {
+            background-color: #4a3b4f;
+        }
+        #section2 img {
+            display: block;
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto 1.5rem auto;
+            border: 3px solid white;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+        }
+
+        #section3 {
+             background-image: url('css/La_romería_de_San_Isidro.jpg');
+             background-size: cover;
+             background-position: center center;
+             background-repeat: no-repeat;
+             background-color: #333;
+         }
+        #section3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        #section3 .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        #section4 {
+            background-color: #8e44ad;
+        }
+
+        /* --- Content Wrapper --- */
+        .content-wrapper {
+           max-width: 800px;
+           position: relative;
+           z-index: 2;
+        }
+
+    </style>
 </head>
 <body>
 
-  <section style="background-image: url('css/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project-min.jpg');">
-    <div class="overlay"></div>
-    <div class="content text-center">
-      <h1 class="text-5xl md:text-7xl font-serif mb-4 fade-in">Elias Grove</h1>
-      <p class="text-lg md:text-xl italic text-gray-300 fade-in" style="animation-delay: 0.5s;">I write fiction. You can find my work below.</p>
-    </div>
-  </section>
+    <section id="section1">
+        <div class="content-wrapper">
+            <h1>elias grove</h1>
+            <p>"whatever in creation exists without my knowledge exists without my consent."</p>
+        </div>
+    </section>
 
-  <section style="background-image: url('css/La_romería_de_San_Isidro.jpg');">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2 class="text-4xl font-serif mb-6 fade-in">About</h2>
-      <p class="text-lg fade-in" style="animation-delay: 0.3s;">Elias Grove writes fiction. Gritty, grounded, and literary—his work moves through haunted places and haunted people. He doesn’t bother with the sugarcoat.</p>
-    </div>
-  </section>
+    <section id="section2">
+        <div class="content-wrapper">
+            <h2>about</h2>
+            <img src="css/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project-min.jpg" alt="witches sabbath by francisco de goya">
+            <p>i write fiction. you can find what i'm currently working on below.</p>
+        </div>
+    </section>
 
-  <section style="background-image: url('css/La_romería_de_San_Isidro.jpg');">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2 class="text-4xl font-serif mb-6 fade-in">Works</h2>
-      <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
-        <li><strong>Concerning the Vampire of the Vieux Carré</strong> — Short Story</li>
-        <li><strong>For All the Goodbyes</strong> — Novel</li>
-        <li><strong>The Nugget</strong> — Novel</li>
-        <li><strong>Ghostwriter</strong> — Work in Progress</li>
-        <li><strong>Tochmarc</strong> — Work in Progress</li>
-      </ul>
-    </div>
-  </section>
+    <section id="section3">
+        <div class="content-wrapper">
+            <h2>works</h2>
+            <p>details about current projects will appear here.</p>
+        </div>
+    </section>
 
-  <section style="background-image: url('css/El_coloso.jpg');">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2 class="text-4xl font-serif mb-6 fade-in">Contact</h2>
-      <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
-        <li>📧 contact@eliasgrove.com</li>
-        <li>🐦 <a href="https://twitter.com/elias_grove" class="underline">elias_grove</a></li>
-        <li>📷 <a href="https://instagram.com/a.elias.grove" class="underline">a.elias.grove</a></li>
-      </ul>
-    </div>
-  </section>
+    <section id="section4">
+         <div class="content-wrapper">
+            <h2>contact</h2>
+            <p>contact information or a form could go here.</p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                         entry.target.classList.remove('is-visible');
+                    }
+                });
+            };
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 
 </body>
 </html>
