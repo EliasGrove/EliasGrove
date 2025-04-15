@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elias Grove</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+    section {
+      scroll-snap-align: start;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.5rem;
+      color: white;
+      background-size: cover;
+      background-position: center;
+    }
+    h1, h2, h3 {
+      font-family: 'EB Garamond', serif;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn ease 2s forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <section style="background-image: url('css/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project-min.jpg');">
+    <div class="overlay"></div>
+    <div class="content text-center">
+      <h1 class="text-5xl md:text-7xl font-serif mb-4 fade-in">Elias Grove</h1>
+      <p class="text-lg md:text-xl italic text-gray-300 fade-in" style="animation-delay: 0.5s;">I write fiction. You can find my work below.</p>
+    </div>
+  </section>
+
+  <section style="background-image: url('css/La_romería_de_San_Isidro.jpg');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2 class="text-4xl font-serif mb-6 fade-in">About</h2>
+      <p class="text-lg fade-in" style="animation-delay: 0.3s;">Elias Grove writes fiction. Gritty, grounded, and literary—his work moves through haunted places and haunted people. He doesn’t bother with the sugarcoat.</p>
+    </div>
+  </section>
+
+  <section style="background-image: url('css/La_romería_de_San_Isidro.jpg');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2 class="text-4xl font-serif mb-6 fade-in">Works</h2>
+      <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
+        <li><strong>Concerning the Vampire of the Vieux Carré</strong> — Short Story</li>
+        <li><strong>For All the Goodbyes</strong> — Novel</li>
+        <li><strong>The Nugget</strong> — Novel</li>
+        <li><strong>Ghostwriter</strong> — Work in Progress</li>
+        <li><strong>Tochmarc</strong> — Work in Progress</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background-image: url('css/El_coloso.jpg');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2 class="text-4xl font-serif mb-6 fade-in">Contact</h2>
+      <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
+        <li>📧 contact@eliasgrove.com</li>
+        <li>🐦 <a href="https://twitter.com/elias_grove" class="underline">elias_grove</a></li>
+        <li>📷 <a href="https://instagram.com/a.elias.grove" class="underline">a.elias.grove</a></li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
