@@ -3,24 +3,24 @@ title: Elias Grove
 layout: layout.njk
 ---
 
-# ✨ Elias Grove
+# Elias Grove
 
-**Author. Storyteller. Dreamer.**
+**Author. Storyteller. Dream-walker.**
 
-Welcome to my site. I write literary fiction, short stories, and occasional thoughts on writing.
+Welcome to my corner of the literary shadows.  
+I write fiction that walks the line between the beautiful and the brutal.
+
+---
 
 ## 📚 Books
 
-- *The Glass Orchard* – 2023  
-- *Dreamless Rivers* – Coming Soon  
-- *Shards of Silence* – WIP
+- **Short Stories**: *Concerning the Vampire of the Vieux Carré*
+- **Novels**: *For All the Goodbyes*, *The Nugget*
+- **In Progress**: *Ghostwriter*, *Tochmarc*
 
-## 📝 Blog
+---
 
-[Visit the blog](./blog/)
+## ✉️ Connect
 
-## 📬 Contact
-
-- Email: [a.elias.grove@gmail.com](mailto:a.elias.grove@gmail.com)  
-- Twitter: [@eliasgrove](https://twitter.com/eliasgrove)  
-- Goodreads: [Elias Grove](https://www.goodreads.com/)
+- Email: [contact@eliasgrove.com](mailto:contact@eliasgrove.com)  
+- Twitter: [@elias_grove](https://twitter.com/elias_grove)
