@@ -1,22 +1,15 @@
 ---
 title: Contact
 layout: layout.njk
+eleventyNavigation:
+  key: Contact
+  order: 3
 ---
 
-# Get in Touch
+For inquiries, collaborations, or just to talk about weird fiction:
 
-Feel free to reach out
+* **Email:** [contact@eliasgrove.com](mailto:contact@eliasgrove.com)
+* **X:** [@elias_grove](https://twitter.com/elias_grove)
+* **Instagram:** [@a.elias.grove](https://instagram.com/a.elias.grove)
 
-I do my best to reply to every email, if I don't within a day or so feel free to send another one, or reach out to me directly on X.
-
----
-
-## 📬 Reach Me Via:
-
-- Email: [contact@eliasgrove.com](mailto:contact@eliasgrove.com)  
-- X: [@elias_grove](https://twitter.com/elias_grove)  
-- Instagram: [@a.elias.grove](https://instagram.com/a.elias.grove)
-  
----
-
-Thank you for stopping by.
+I read everything, but reply when I can. Usually when the coffee hits right.
