@@ -2,36 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {# Keep viewport for basic mobile sanity, even if layout isn't responsive #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | Elias Grove</title> {# Adds site name to title #}
+    <title>{{ title }} - Elias Grove's Site</title>
     <link rel="stylesheet" href="/css/style.css">
-    {# Links to Google Fonts are in the CSS via @import #}
 </head>
-{# Adds a class like "page-home" or "page-contact" to the body #}
-<body class="page-{{ pageClass | default('default') }}">
+<body> {# Removed class attribute #}
     <div class="container">
         <header>
             <h1><a href="/">Elias Grove</a></h1>
-            <nav>
-              <a href="/">Home</a>
-              <a href="/blog/">Random</a>  {# <--- Changed text to Random #}
-              <a href="/contact/">Contact</a>
-            </nav>
+             <nav>
+               <a href="/">Home</a>
+               <a href="/blog/">Random</a> {# Keep link name as Random #}
+               <a href="/contact/">Contact</a>
+             </nav>
         </header>
 
         <main>
-            {# No automatic H1 title here anymore, control it in the markdown #}
             {{ content | safe }} {# Where page content goes #}
         </main>
 
+        <hr> {# Classic separator #}
+
         <footer>
-            <p>&copy; {% year %} Elias Grove</p> {# Eleventy shortcode for year #}
+            <p>Site Last Updated: April 15, 2025<br> {# Static example #}
+            &copy; {% year %} Elias Grove - All rights reserved.</p>
         </footer>
     </div>
-
-    {# Simple fade-in script - applies class for CSS #}
-    <script>
-      document.body.classList.add('loaded');
-    </script>
+     {# Removed fade-in script #}
 </body>
 </html>
