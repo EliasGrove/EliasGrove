@@ -1,29 +1,23 @@
 ---
-title: Elias Grove
+title: Home
 layout: layout.njk
+eleventyNavigation:
+  key: Home
+  order: 1
 ---
 
-# Elias Grove
+I write fiction — short stories and novels — usually about people on the edge of something they can’t name until it’s too late.
 
-**Author of quiet hauntings and beautiful ruin.**
-
-Welcome to my corner of the web — a space for stories that linger like smoke, myth, or memory.  
-I write fiction that drifts between reality and dream, loss and longing.
-
----
+Sometimes it’s quiet. Sometimes it’s weird. Most of the time it’s both.
 
 ## Books
 
-- *Concerning the Vampire of the Vieux Carré* — Short Stories  
-- *For All the Goodbyes* — Novel  
-- *The Nugget* — Novel  
-- *Ghostwriter* — In Progress  
-- *Tochmarc* — In Progress
+* **Concerning the Vampire of the Vieux Carré** — *Short Stories*
+* **For All the Goodbyes** — *Novel*
+* **The Nugget** — *Novel*
+* **Ghostwriter** — *WIP*
+* **Tochmarc** — *WIP*
 
----
+## Elsewhere
 
-## Connect
-
-- 📧 [contact@eliasgrove.com](mailto:contact@eliasgrove.com)  
-- 🖤 [@elias_grove](https://x.com/elias_grove)  
-- 📸 [@a.elias.grove](https://instagram.com/a.elias.grove)
+Find me on [X @elias_grove](https://twitter.com/elias_grove) or [Instagram @a.elias.grove](https://instagram.com/a.elias.grove).
