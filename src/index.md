@@ -5,21 +5,25 @@ layout: layout.njk
 
 # Elias Grove
 
-**Storyteller.**
+**Author of quiet hauntings and beautiful ruin.**
 
-I write
-
----
-
-## 📚 Books
-
-- **Short Stories**: *Concerning the Vampire of the Vieux Carré*
-- **Novels**: *For All the Goodbyes*, *The Nugget*
-- **In Progress**: *Ghostwriter*, *Tochmarc*
+Welcome to my corner of the web — a space for stories that linger like smoke, myth, or memory.  
+I write fiction that drifts between reality and dream, loss and longing.
 
 ---
 
-## ✉️ Connect
+## Books
 
-- Email: [contact@eliasgrove.com](mailto:contact@eliasgrove.com)  
-- Twitter: [@elias_grove](https://twitter.com/elias_grove)
+- *Concerning the Vampire of the Vieux Carré* — Short Stories  
+- *For All the Goodbyes* — Novel  
+- *The Nugget* — Novel  
+- *Ghostwriter* — In Progress  
+- *Tochmarc* — In Progress
+
+---
+
+## Connect
+
+- 📧 [contact@eliasgrove.com](mailto:contact@eliasgrove.com)  
+- 🖤 [@elias_grove](https://x.com/elias_grove)  
+- 📸 [@a.elias.grove](https://instagram.com/a.elias.grove)
