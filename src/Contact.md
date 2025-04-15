@@ -1,15 +1,21 @@
 ---
 title: Contact
 layout: layout.njk
-eleventyNavigation:
-  key: Contact
-  order: 3
+pageClass: contact # <--- Sets the body class for this page
 ---
 
-For inquiries, collaborations, or just to talk about weird fiction:
+# Get in Touch {# Use H1 here now layout doesn't add it #}
 
-* **Email:** [contact@eliasgrove.com](mailto:contact@eliasgrove.com)
-* **X:** [@elias_grove](https://twitter.com/elias_grove)
-* **Instagram:** [@a.elias.grove](https://instagram.com/a.elias.grove)
+If you’d like to reach out feel free to contact me.
 
-I read everything, but reply when I can. Usually when the coffee hits right.
+I do my best to reply in less than a day. If I don't feel free to shout at me on X or Instagram.
+
+---
+## 📬 Reach Me {# Use H2 here now #}
+* Email: [contact@eliasgrove.com](mailto:contact@eliasgrove.com)
+* X: [@elias_grove](https://twitter.com/elias_grove)
+* Instagram: [@a.elias.grove](https://instagram.com/a.elias.grove)
+
+---
+
+Thank you for stopping by
