@@ -9,15 +9,8 @@
 }
 
 body {
-  /* --- NEW Background Image --- */
-  background-image: url('/css/Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  /* --- Fallback & Text Styles --- */
-  background-color: #121212;
+  /* --- Default Background & Text Styles --- */
+  background-color: #121212; /* Default dark background */
   color: #eaeaea;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -26,17 +19,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* Default background properties (no image) */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   /* --- Fade-in Hook --- */
   opacity: 0;
   transition: opacity 0.6s ease-in;
 }
+
+/* --- Page Specific Backgrounds --- */
+body.page-home {
+  background-image: url('/css/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project.jpg');
+}
+
+body.page-contact {
+  background-image: url('/css/Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg');
+}
+/* --- End Page Specific Backgrounds --- */
+
 
 /* Container for centered content */
 .container {
   max-width: 750px;
   margin: 4rem auto;
   padding: 2rem 3rem;
-  background-color: rgba(26, 26, 26, 0.95); /* Increased opacity slightly */
+  background-color: rgba(26, 26, 26, 0.95);
   border: 1px solid #2c2c2c;
   border-radius: 4px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -98,10 +108,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-h1 { /* Page titles */
+h1 { /* Page titles in Markdown */
   font-size: 2.2rem;
   border-bottom: 1px solid #3a3a3a;
   padding-bottom: 0.5rem;
+  margin-top: 0; /* Remove top margin for H1s directly in main */
 }
 
 h2 {
@@ -130,18 +141,17 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- NEW: Styling for lists in main content (e.g., Contact page) --- */
+/* Styling for lists in main content (e.g., Contact page) */
 main ul {
-  list-style: none; /* Remove default bullets */
-  padding-left: 0; /* Remove default indentation */
-  margin-top: 1.5rem; /* Add some space above the list */
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
 }
 
 main ul li {
-  margin-bottom: 1rem; /* Add space between contact items */
-  font-size: 1.05rem; /* Slightly larger text for list items */
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
 }
-/* -------------------------------------------------------------------- */
 
 /* Footer */
 footer {
