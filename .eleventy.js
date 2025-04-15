@@ -1,6 +1,22 @@
+// No need to require luxon unless you add the custom filter back later
+
 module.exports = function(eleventyConfig) {
-  // Copy the `/css` folder to the output `/dist` folder
+
+  // Copy the /css folder to the output /dist folder
   eleventyConfig.addPassthroughCopy("css");
+
+  // Add a shortcode to get the current year
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  // --- Optional: Add back if you need complex date formatting later ---
+  // const { DateTime } = require("luxon");
+  // eleventyConfig.addFilter("formatPostDate", (dateObj, format = "MMMM d, yyyy") => {
+  //   if (dateObj instanceof Date) {
+  //        return DateTime.fromJSDate(dateObj).toFormat(format);
+  //   }
+  //   return dateObj;
+  // });
+  // ---------------------------------------------------------------------
 
   return {
     dir: {
@@ -8,8 +24,8 @@ module.exports = function(eleventyConfig) {
       includes: "_includes", // Layout files are in /src/_includes
       output: "dist" // Built site goes into /dist
     },
-    markdownTemplateEngine: "njk", // Use Nunjucks for Markdown files
-    htmlTemplateEngine: "njk", // Use Nunjucks for HTML files
-    templateFormats: ["md", "njk", "html"] // Process these file types
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    templateFormats: ["md", "njk", "html"]
   };
 };
