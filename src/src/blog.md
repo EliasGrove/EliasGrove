@@ -1,19 +1,19 @@
 ---
-title: Blog
+title: Journal
 layout: layout.njk
 ---
 
-# Blog
+# Journal
 
-Updates, fragments, essays — all the pieces between the books.
+Fragments. Notes. Stuff I didn’t want to forget.
 
 ---
 
 {% for post in collections.post | reverse %}
-### [{{ post.data.title }}]({{ post.url }})
+### [{{ post.data.title }}]({{ post.url }})  
 <small>{{ post.date | date("MMMM d, yyyy") }}</small>
 
-{{ post.templateContent | truncate(200, true, "...") }}
+{{ post.templateContent | truncate(180, true, "...") }}
 
 ---
 
