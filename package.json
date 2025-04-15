@@ -9,6 +9,6 @@
   "author": "Elias Grove",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1" // Use a specific recent version
+    "@11ty/eleventy": "^2.0.1"
   }
 }
