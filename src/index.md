@@ -1,14 +1,14 @@
 ---
 title: Home
 layout: layout.njk
-eleventyNavigation:
-  key: Home
-  order: 1
+pageClass: home # <--- Sets the body class for this page
 ---
 
-I write fiction — short stories and novels — usually about people on the edge of something they can’t name until it’s too late.
+# Elias Grove
 
-Sometimes it’s quiet. Sometimes it’s weird. Most of the time it’s both.
+I write fiction. You can find my work below.
+
+Check my [X @elias_grove](https://twitter.com/elias_grove) or my blogs if you enjoy ranting.
 
 ## Books
 
@@ -17,7 +17,3 @@ Sometimes it’s quiet. Sometimes it’s weird. Most of the time it’s both.
 * **The Nugget** — *Novel*
 * **Ghostwriter** — *WIP*
 * **Tochmarc** — *WIP*
-
-## Elsewhere
-
-Find me on [X @elias_grove](https://twitter.com/elias_grove) or [Instagram @a.elias.grove](https://instagram.com/a.elias.grove).
