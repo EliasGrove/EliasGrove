@@ -10,7 +10,7 @@
 
 body {
   /* --- Default Background & Text Styles --- */
-  background-color: #121212; /* Default dark background */
+  background-color: #121212;
   color: #eaeaea;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -19,15 +19,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Default background properties (no image) */
+  /* Default background properties */
   background-size: cover;
-  background-position: center center;
+  background-position: center center; /* Default position */
   background-repeat: no-repeat;
   background-attachment: fixed;
 
   /* --- Fade-in Hook --- */
   opacity: 0;
-  transition: opacity 0.6s ease-in;
+  transition: opacity 0.8s ease-in; /* Slightly longer fade */
 }
 
 /* --- Page Specific Backgrounds --- */
@@ -37,6 +37,7 @@ body.page-home {
 
 body.page-contact {
   background-image: url('/css/Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg');
+  background-position: center top; /* <<< CHANGED: Align Saturn image to top */
 }
 /* --- End Page Specific Backgrounds --- */
 
@@ -44,12 +45,12 @@ body.page-contact {
 /* Container for centered content */
 .container {
   max-width: 750px;
-  margin: 4rem auto;
-  padding: 2rem 3rem;
-  background-color: rgba(26, 26, 26, 0.95);
-  border: 1px solid #2c2c2c;
+  margin: 5rem auto; /* Increased top/bottom margin */
+  padding: 2.5rem 3rem; /* Slightly increased padding */
+  background-color: rgba(26, 26, 26, 0.96); /* Slightly more opaque */
+  border: 1px solid #2a2a2a; /* Slightly lighter border */
   border-radius: 4px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
 }
 
 /* Header and Navigation */
@@ -85,12 +86,15 @@ nav a {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: color 0.3s ease;
+  padding-bottom: 5px; /* Add space for potential border */
+  border-bottom: 2px solid transparent; /* Invisible border */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease; /* <<< CHANGED: Smooth transition for border */
 }
 
 nav a:hover,
 nav a.active {
   color: #c2a878;
+  border-bottom-color: #c2a878; /* <<< CHANGED: Underline effect on hover/active */
 }
 
 /* Main Content Area */
@@ -112,7 +116,7 @@ h1 { /* Page titles in Markdown */
   font-size: 2.2rem;
   border-bottom: 1px solid #3a3a3a;
   padding-bottom: 0.5rem;
-  margin-top: 0; /* Remove top margin for H1s directly in main */
+  margin-top: 0;
 }
 
 h2 {
