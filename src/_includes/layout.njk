@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Elias Grove</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h1><a href="/">Elias Grove</a></h1>
-      <nav>
-        <a href="/">Home</a>
-        {# Only show this if you add the pages #}
-        {# <a href="/blog/">Journal</a> #}
-        <a href="/contact/">Contact</a>
-        <a href="/reading/">Reading</a>
-      </nav>
-    </header>
+{# Adds a class like "page-home" or "page-contact" to the body #}
+<body class="page-{{ pageClass | default('default') }}">
+    <div class="container">
+        <header>
+            <h1><a href="/">Elias Grove</a></h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/contact/">Contact</a>
+                {# Add other nav links here if needed #}
+            </nav>
+        </header>
 
-    <main>
-      {{ content | safe }}
-    </main>
+        <main>
+            {# No automatic H1 title here anymore, control it in the markdown #}
+            {{ content | safe }} {# Where page content goes #}
+        </main>
 
-    <footer>
-      <p>&copy; {% year %} Elias Grove</p>
-    </footer>
-  </div>
+        <footer>
+            <p>&copy; {% year %} Elias Grove</p>
+        </footer>
+    </div>
 
-  <script>
-    document.body.style.opacity = 0;
-    window.onload = () => {
-      document.body.style.transition = "opacity 0.8s ease";
-      document.body.style.opacity = 1;
-    };
-  </script>
+    {# Simple fade-in script - applies class for CSS #}
+    <script>
+      document.body.classList.add('loaded');
+    </script>
 </body>
 </html>
