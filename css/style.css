@@ -9,7 +9,15 @@
 }
 
 body {
-  background-color: #121212;
+  /* --- Background Image --- */
+  background-image: url('/css/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project.jpg');
+  background-size: cover; /* Scale the image to cover the entire area */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-attachment: fixed; /* Keep image fixed during scroll */
+
+  /* --- Fallback & Text Styles --- */
+  background-color: #121212; /* Fallback if image fails */
   color: #eaeaea;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -17,6 +25,10 @@ body {
   font-size: 16px; /* Base font size */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* --- Fade-in Hook --- */
+  opacity: 0; /* Start transparent for fade-in */
+  transition: opacity 0.6s ease-in; /* Fade-in transition */
 }
 
 /* Container for centered content */
@@ -24,9 +36,10 @@ body {
   max-width: 750px; /* Adjust as needed */
   margin: 4rem auto; /* Top/bottom margin, centered */
   padding: 2rem 3rem; /* Padding inside the container */
-  background-color: #1a1a1a; /* Slightly lighter than body */
+  background-color: rgba(26, 26, 26, 0.9); /* Slightly lighter than body, with some transparency */
   border: 1px solid #2c2c2c;
   border-radius: 4px; /* Subtle rounding */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the container */
 }
 
 /* Header and Navigation */
@@ -127,12 +140,7 @@ footer {
   padding-top: 1.5rem;
 }
 
-/* Optional: Fade-in effect (keep script in layout.njk) */
-body {
-  opacity: 0;
-  transition: opacity 0.6s ease-in;
-}
-
+/* Class applied by script in layout.njk after load */
 body.loaded {
   opacity: 1;
 }
