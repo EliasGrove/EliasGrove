@@ -5,10 +5,9 @@ layout: layout.njk
 
 # Elias Grove
 
-**Author. Storyteller. Dream-walker.**
+**Storyteller.**
 
-Welcome to my corner of the literary shadows.  
-I write fiction that walks the line between the beautiful and the brutal.
+I write
 
 ---
 
