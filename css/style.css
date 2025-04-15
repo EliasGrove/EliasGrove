@@ -1,41 +1,79 @@
-@font-face {
-  font-family: "Arabic Typesetting";
-  src: local("Arabic Typesetting"), url("https://fonts.cdnfonts.com/s/16207/arabtype.woff") format("woff");
-}
+/* Font: Inter + Playfair Display from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
 
 body {
-  background-color: #0e0e0e;
+  background-color: #0a0a0a;
+  background-image: url('/css/Francisco_de_Goya_y_Lucientes_-_Witches_Sabbath_-_Google_Art_Project.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #eaeaea;
-  font-family: 'Arabic Typesetting', serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 2rem;
-  line-height: 1.6;
+  padding: 0;
+  line-height: 1.7;
 }
 
-header, footer {
+.container {
+  max-width: 750px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(10, 10, 10, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+}
+
+header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+header h1 a {
+  font-size: 3rem;
+  color: #f0c674;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+
+nav {
+  margin-top: 1rem;
 }
 
 nav a {
-  color: #d4af37;
-  text-decoration: none;
+  color: #bbb;
   margin: 0 1rem;
+  text-decoration: none;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
-h1, h2, h3 {
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
   color: #ffffff;
-  text-shadow: 0 0 5px #000;
-  font-size: 2.5rem;
+  text-shadow: 0 0 6px #000;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #f0c674;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #dddddd;
+  margin-top: 1.5rem;
 }
 
 a {
-  color: #f0c674;
+  color: #e5b94c;
   text-decoration: none;
 }
 
@@ -43,12 +81,9 @@ a:hover {
   color: #fff;
 }
 
-main {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  background-color: rgba(15, 15, 15, 0.9);
-  border: 1px solid #333;
-  border-radius: 6px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #777;
 }
