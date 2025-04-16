@@ -137,13 +137,15 @@
         box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Optional: add a ring matching theme */
     }
 
-    /* Utility class to hide the honeypot field visually but keep it accessible */
+    /* Hiding class - can be removed if honeypot isn't used */
+    /*
     .hidden {
         position: absolute !important;
         height: 1px; width: 1px;
         overflow: hidden;
         clip: rect(1px, 1px, 1px, 1px);
     }
+    */
 
   </style>
 </head>
@@ -206,34 +208,38 @@
 
             <div class="w-full md:w-2/3">
                 <h3 class="text-2xl font-serif mb-4">Send a Message</h3>
-                <form name="contact" method="POST" netlify> {/* REMOVED action and netlify-honeypot */}
-    <input type="hidden" name="form-name" value="contact">
-    {/* REMOVED the honeypot <p> block */}
 
-    {/* Keep your regular input fields */}
-    <div>
-        <label for="name" class="block text-sm font-medium mb-1">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your Name"
-               class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-    </div>
-    <div>
-        <label for="email" class="block text-sm font-medium mb-1">Email</label>
-        <input type="email" id="email" name="email" required placeholder="your.email@example.com"
-               class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-    </div>
-    <div>
-        <label for="message" class="block text-sm font-medium mb-1">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Your message here..."
-                  class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-    </div>
-    <div>
-        <button type="submit"
-                class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out">
-            Send
-        </button>
-    </div>
-</form>
-                </div>
+                <form name="contact" method="POST" netlify class="space-y-4">
+                    {/* Removed action and netlify-honeypot attributes */}
+                    <input type="hidden" name="form-name" value="contact">
+                    {/* Removed the honeypot <p> block */}
+
+                    {/* Keep your regular input fields */}
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name"
+                               class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com"
+                               class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message here..."
+                                  class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"
+                                class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out">
+                            Send
+                        </button>
+                    </div>
+                </form>
+                {/* **** END OF SIMPLIFIED FORM **** */}
+
+            </div>
 
             <div class="w-full md:w-1/3 mt-8 md:mt-0">
                 <h3 class="text-2xl font-serif mb-4">Connect</h3>
