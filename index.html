@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elias Grove</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -58,7 +61,6 @@
       to { opacity: 1; }
     }
 
-    /* === HOVER EFFECT START === */
     .content h1,
     .content h2,
     .content h3,
@@ -79,7 +81,6 @@
       transform: translateY(-4px);
       text-shadow: 2px 5px 7px rgba(0, 0, 0, 0.7);
     }
-    /* === HOVER EFFECT END === */
 
     #landing {
       background-color: #000000;
@@ -144,25 +145,25 @@
   </section>
 
   <section id="contact" style="background-image: url('css/El_coloso.jpg');">
-  <div class="overlay"></div>
-  <div class="content">
-    <h2 class="text-4xl font-serif mb-6 fade-in">Contact</h2>
-    <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
-      <li>📧 <span id="email-link"><noscript>Enable JavaScript to view email</noscript></span></li>
-      <li>🐦 <a href="https://twitter.com/elias_grove" class="underline">elias_grove</a></li>
-      <li>📷 <a href="https://instagram.com/a.elias.grove" class="underline">a.elias.grove</a></li>
-    </ul>
-  </div>
-</section>
+    <div class="overlay"></div>
+    <div class="content">
+      <h2 class="text-4xl font-serif mb-6 fade-in">Contact</h2>
+      <ul class="space-y-4 text-lg fade-in" style="animation-delay: 0.3s;">
+        <li>📧 <span id="email-link"><noscript>Enable JavaScript to view email</noscript></span></li>
+        <li>🐦 <a href="https://twitter.com/elias_grove" class="underline">elias_grove</a></li>
+        <li>📷 <a href="https://instagram.com/a.elias.grove" class="underline">a.elias.grove</a></li>
+      </ul>
+    </div>
+  </section>
 
-<script>
-  // Spam protection script for email
-  const user = "contact";
-  const domain = "eliasgrove.com";
-  const email = `${user}@${domain}`;
-  const link = `<a href="mailto:${email}" class="underline">${email}</a>`;
-  document.getElementById("email-link").innerHTML = link;
-</script>
+  <script>
+    // Spam protection script for email
+    const user = "contact";
+    const domain = "eliasgrove.com";
+    const email = `${user}@${domain}`;
+    const link = `<a href="mailto:${email}" class="underline">${email}</a>`;
+    document.getElementById("email-link").innerHTML = link;
+  </script>
 
 </body>
 </html>
