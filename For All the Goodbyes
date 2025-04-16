@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For All the Goodbyes | Elias Grove</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Crimson Pro', serif;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    a {
+      text-decoration: underline;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>For All the Goodbyes</h1>
+  <p><em>(Add your synopsis, excerpt, or thoughts here — whatever you want readers to see first.)</em></p>
+
+  <a href="index.html">← Back to Home</a>
+</body>
+</html>
