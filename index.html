@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://js.hcaptcha.com https://*.hcaptcha.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://*.hcaptcha.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://*.hcaptcha.com; frame-src https://*.hcaptcha.com;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,7 @@
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
       height: 100vh;
-      cursor: url('css/nugget.png') 16 16, auto; /* Ensure css/nugget.png exists */
+      cursor: url('css/nugget.png') 16 16, auto; /* Ensure nugget.png is in a css folder or update path */
       background-color: #1a1a1a;
     }
     section {
@@ -28,6 +28,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      /* Increased vertical padding slightly */
       padding: 2rem 1.5rem;
       color: white;
       background-size: cover;
@@ -41,17 +42,18 @@
     .overlay {
       position: absolute;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
       z-index: 0;
     }
     #landing .overlay {
-      display: none; /* No overlay for landing */
+      display: none; /* No overlay for the landing section */
     }
     .content {
       position: relative;
       z-index: 10;
+      /* Adjusted max-width for consistency with form layout */
+      max-width: 1000px;
       width: 100%;
-      max-width: 1000px; /* Adjust max-width as needed */
     }
     .fade-in {
       opacity: 0;
@@ -60,39 +62,59 @@
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-    /* Hover effects */
-    .content h1, .content h2, .content h3, .content p, .content li, .content label, .content button {
+
+    /* Hover effects for text/links */
+    .content h1,
+    .content h2,
+    .content h3,
+    .content p,
+    .content li,
+    .content label, /* Added label */
+    .content button /* Added button */ {
       transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
     .content a {
       display: inline-block;
       transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
-    .content h1:hover, .content h2:hover, .content h3:hover, .content p:hover, .content li:hover, .content a:hover, .content label:hover, .content button:hover {
+    .content h1:hover,
+    .content h2:hover,
+    .content h3:hover,
+    .content p:hover,
+    .content li:hover,
+    .content a:hover,
+    .content label:hover, /* Added label hover */
+    .content button:hover /* Added button hover */ {
       transform: translateY(-4px);
       text-shadow: 2px 5px 7px rgba(0, 0, 0, 0.7);
     }
+
+     /* Added hover for inputs/textarea */
     .content input:hover, .content textarea:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
+       transform: translateY(-2px);
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+     }
+
+
     #landing {
-      background-color: #000000; /* Solid black for landing */
+      background-color: #000000; /* Black background for landing */
     }
-    /* Works section specific styles */
+
+    /* Styles for #works section */
     #works .column-header {
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.75rem; /* 12px */
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      font-size: 1.125rem;
+      font-size: 1.125rem; /* 18px */
     }
     #works .work-title {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
+      font-size: 1rem; /* 16px */
+      margin-bottom: 0.5rem; /* 8px */
       line-height: 1.4;
     }
-    /* Contact form input/textarea styling */
+
+    /* Styles for #contact form inputs/textarea */
     #contact input[type="text"],
     #contact input[type="email"],
     #contact textarea {
@@ -100,6 +122,9 @@
         border: 1px solid rgba(255, 255, 255, 0.3);
         color: white;
         transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 0.25rem; /* Added border-radius */
+        padding: 0.5rem 0.75rem; /* Added padding */
+        width: 100%; /* Ensure full width */
     }
     #contact input[type="text"]::placeholder,
     #contact input[type="email"]::placeholder,
@@ -139,76 +164,85 @@
       <h2 class="text-4xl font-serif mb-8 fade-in">Works</h2>
       <div class="fade-in" style="animation-delay: 0.3s;">
           <div class="flex flex-col md:flex-row justify-around items-start md:space-x-6 space-y-8 md:space-y-0 w-full mb-8 md:mb-12">
+
             <div class="w-full md:w-1/3 px-2 text-center">
               <h3 class="column-header">Short Stories</h3>
-              <p class="work-title"><a href="vampire-vieux-carre.html" class="underline hover:text-gray-300 transition duration-200">Concerning the Vampire of the Vieux Carré</a></p>
+               <p class="work-title"><a href="vampire-vieux-carre.html" class="underline hover:text-gray-300 transition duration-200">Concerning the Vampire of the Vieux Carré</a></p>
             </div>
+
             <div class="w-full md:w-1/3 px-2 text-center">
               <h3 class="column-header">Novels</h3>
               <p class="work-title"><a href="for-all-the-goodbyes.html" class="underline hover:text-gray-300 transition duration-200">For All the Goodbyes</a></p>
               <p class="work-title"><a href="the-nugget.html" class="underline hover:text-gray-300 transition duration-200">The Nugget</a></p>
             </div>
+
             <div class="w-full md:w-1/3 px-2 text-center">
               <h3 class="column-header">Works In Progress</h3>
               <p class="work-title">Ghostwriter</p>
               <p class="work-title">Tochmarc</p>
             </div>
+
           </div>
+
           <div class="w-full px-2 text-center mt-8 md:mt-0">
-              <h3 class="column-header">Poetry</h3>
-              <p class="work-title"><a href="silence.html" class="underline hover:text-gray-300 transition duration-200">Silence</a></p>
+            <h3 class="column-header">Poetry</h3>
+            <p class="work-title"><a href="silence.html" class="underline hover:text-gray-300 transition duration-200">Silence</a></p>
           </div>
+
       </div>
-    </div>
-  </section>
+    </div> </section>
 
   <section id="contact" style="background-image: url('css/El_coloso.jpg');">
     <div class="overlay"></div>
-    <div class="content w-full max-w-4xl mx-auto">
-        <h2 class="text-4xl font-serif mb-8 text-center fade-in">Contact</h2>
+    <div class="content w-full max-w-4xl mx-auto"> <h2 class="text-4xl font-serif mb-8 text-center fade-in">Contact</h2>
         <div class="flex flex-col md:flex-row gap-8 md:gap-12 fade-in" style="animation-delay: 0.2s;">
+
             <div class="w-full md:w-2/3">
                 <h3 class="text-2xl font-serif mb-4">Send a Message</h3>
-                <form name="contact" method="POST" netlify action="/thank-you.html" class="space-y-4">
-                    <input type="hidden" name="form-name" value="contact">
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                    <input type="hidden" name="access_key" value="0ae965ae-6139-438b-97a4-d095861f2aa9">
+
                     <div>
                         <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your Name"
-                               class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium mb-1">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com"
-                               class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
                     </div>
                     <div>
                         <label for="message" class="block text-sm font-medium mb-1">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Your message here..."
-                                  class="w-full rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea>
                     </div>
-                    <div>
+
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <input type="hidden" name="redirect" value="https://eliasgrove.com/thank-you.html"> <div>
                         <button type="submit"
                                 class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out">
                             Send
                         </button>
                     </div>
                 </form>
-            </div>
+                </div>
+
             <div class="w-full md:w-1/3 mt-8 md:mt-0">
                 <h3 class="text-2xl font-serif mb-4">Connect</h3>
                 <ul class="space-y-4 text-lg">
-                    <li>
+                     <li>
                         <a href="https://twitter.com/elias_grove" class="underline hover:text-blue-400 align-middle">
-                           <span aria-hidden="true" class="inline-block mr-2 text-xl align-middle">🐦</span> elias_grove
+                           <span aria-hidden="true" class="inline-block mr-2 text-xl align-middle">🐦</span>
+                           elias_grove
                         </a>
                     </li>
                     <li>
                        <a href="https://instagram.com/a.elias.grove" class="underline hover:text-pink-400 align-middle">
-                           <span aria-hidden="true" class="inline-block mr-2 text-xl align-middle">📷</span> a.elias.grove
+                           <span aria-hidden="true" class="inline-block mr-2 text-xl align-middle">📷</span>
+                           a.elias.grove
                        </a>
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
   </section>
