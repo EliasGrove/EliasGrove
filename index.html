@@ -137,15 +137,7 @@
         box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Optional: add a ring matching theme */
     }
 
-    /* Hiding class - can be removed if honeypot isn't used */
-    /*
-    .hidden {
-        position: absolute !important;
-        height: 1px; width: 1px;
-        overflow: hidden;
-        clip: rect(1px, 1px, 1px, 1px);
-    }
-    */
+    /* Removed .hidden CSS as honeypot is not included in this version */
 
   </style>
 </head>
@@ -209,12 +201,12 @@
             <div class="w-full md:w-2/3">
                 <h3 class="text-2xl font-serif mb-4">Send a Message</h3>
 
+                {/* Added name="contact", method="POST", and netlify attribute */}
+                {/* Removed action="#" attribute (Netlify handles it) */}
                 <form name="contact" method="POST" netlify class="space-y-4">
-                    {/* Removed action and netlify-honeypot attributes */}
+                    {/* Added hidden input required by Netlify */}
                     <input type="hidden" name="form-name" value="contact">
-                    {/* Removed the honeypot <p> block */}
 
-                    {/* Keep your regular input fields */}
                     <div>
                         <label for="name" class="block text-sm font-medium mb-1">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your Name"
@@ -237,7 +229,7 @@
                         </button>
                     </div>
                 </form>
-                {/* **** END OF SIMPLIFIED FORM **** */}
+                {/* **** END OF FORM **** */}
 
             </div>
 
