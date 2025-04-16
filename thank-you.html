@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - Elias Grove</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Basic styles adapted from your main page for consistency */
+        html {
+            height: 100%;
+        }
+        body {
+            font-family: 'Crimson Pro', serif;
+            height: 100%;
+            margin: 0;
+            cursor: url('css/nugget.png') 16 16, auto; /* Keep the cursor */
+            background-color: #1a1a1a; /* Fallback background */
+            color: white;
+        }
+        /* Section takes full height and centers content */
+        section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            background-size: cover;
+            background-position: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+        h1, h2, h3 { /* Keep heading font */
+            font-family: 'EB Garamond', serif;
+        }
+        /* Reapply the overlay style */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Consistent overlay */
+            z-index: 0;
+        }
+        /* Reapply the content container style */
+        .content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 800px; /* Can be smaller/larger as needed for thank you page */
+            text-align: center; /* Center text within the content div */
+        }
+        /* Reapply the fade-in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn ease 2s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Basic link styling */
+        .content a {
+            color: #a7d7f9; /* A light blue, adjust as needed */
+            text-decoration: underline;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block; /* Allows transform */
+        }
+        .content a:hover {
+            color: #d1e9fa;
+            transform: translateY(-2px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <section style="background-image: url('css/Francisco_de_Goya_-_El_tío_Paquete.jpg');">
+        <div class="overlay"></div> {/* The dark overlay */}
+        <div class="content">      {/* The centered content container */}
+            <h1 class="text-4xl md:text-5xl font-serif mb-4 fade-in">Thank You!</h1>
+            <p class="text-lg md:text-xl mb-6 fade-in" style="animation-delay: 0.5s;">
+                Your message has been sent successfully.
+            </p>
+            <p class="fade-in" style="animation-delay: 1s;">
+                <a href="index.html">Return to the main page</a> {/* Link back home */}
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
