@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Basic styles adapted from your main page for consistency */
         html {
             height: 100%;
         }
@@ -18,11 +17,10 @@
             font-family: 'Crimson Pro', serif;
             height: 100%;
             margin: 0;
-            cursor: url('css/nugget.png') 16 16, auto; /* Keep the cursor */
-            background-color: #1a1a1a; /* Fallback background */
+            cursor: url('css/nugget.png') 16 16, auto;
+            background-color: #1a1a1a;
             color: white;
         }
-        /* Section takes full height and centers content */
         section {
             position: relative;
             min-height: 100vh;
@@ -35,25 +33,22 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             overflow: hidden;
         }
-        h1, h2, h3 { /* Keep heading font */
+        h1, h2, h3 {
             font-family: 'EB Garamond', serif;
         }
-        /* Reapply the overlay style */
         .overlay {
             position: absolute;
             inset: 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Consistent overlay */
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 0;
         }
-        /* Reapply the content container style */
         .content {
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 800px; /* Can be smaller/larger as needed for thank you page */
-            text-align: center; /* Center text within the content div */
+            max-width: 800px;
+            text-align: center;
         }
-        /* Reapply the fade-in animation */
         .fade-in {
             opacity: 0;
             animation: fadeIn ease 2s forwards;
@@ -61,32 +56,31 @@
         @keyframes fadeIn {
             to { opacity: 1; }
         }
-
-        /* Basic link styling */
         .content a {
-            color: #a7d7f9; /* A light blue, adjust as needed */
+            color: #a7d7f9;
             text-decoration: underline;
             transition: color 0.3s ease, transform 0.3s ease;
-            display: inline-block; /* Allows transform */
+            display: inline-block;
         }
         .content a:hover {
             color: #d1e9fa;
             transform: translateY(-2px);
         }
-
     </style>
 </head>
 <body>
 
     <section style="background-image: url('css/Francisco_de_Goya_-_El_tío_Paquete.jpg');">
-        <div class="overlay"></div> {/* The dark overlay */}
-        <div class="content">      {/* The centered content container */}
+        <!-- The dark overlay -->
+        <div class="overlay"></div>
+        <!-- The centered content container -->
+        <div class="content">
             <h1 class="text-4xl md:text-5xl font-serif mb-4 fade-in">Thank You!</h1>
             <p class="text-lg md:text-xl mb-6 fade-in" style="animation-delay: 0.5s;">
                 Your message has been sent successfully.
             </p>
             <p class="fade-in" style="animation-delay: 1s;">
-                <a href="index.html">Return to the main page</a> {/* Link back home */}
+                <a href="index.html">Return to the main page</a> <!-- Link back home -->
             </p>
         </div>
     </section>
