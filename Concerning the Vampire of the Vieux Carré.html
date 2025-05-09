@@ -19,21 +19,25 @@
      color: white;
      display: flex;
      flex-direction: column;
-     align-items: center;
-     justify-content: center;
+     align-items: center; /* Keeps content horizontally centered */
+     /* MODIFIED: Align content to the start for better scrolling behavior */
+     justify-content: flex-start;
+     /* justify-content: center; */ /* Original: caused issues with scroll starting position */
      min-height: 100vh;
      margin: 0;
-     padding: 2rem;
+     padding: 2rem; /* This padding will now be respected at the top and bottom of scrollable content */
      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-     cursor: url('css/nugget.png') 16 16, auto; /* Assuming nugget.png is in your css folder */
-     overflow: hidden; /* Prevent scrollbars */
+     cursor: url('css/nugget.png') 16 16, auto;
+     /* MODIFIED: Allow vertical scroll if content overflows */
+     overflow-y: auto;
+     /* overflow: hidden; */ /* Original: Prevented scrollbars - THIS WAS THE MAIN ISSUE */
      position: relative; /* For vignette pseudo-element */
    }
 
    /* Subtle Vignette Effect */
    body::before {
      content: "";
-     position: fixed;
+     position: fixed; /* Stays fixed to viewport */
      top: 0; left: 0; right: 0; bottom: 0;
      box-shadow: inset 0 0 130px 35px rgba(0,0,0,0.6);
      pointer-events: none; /* Allows clicks to pass through */
@@ -49,7 +53,18 @@
      width: 100%;
      position: relative; /* To ensure it's above the vignette pseudo-element */
      z-index: 1;
+     /* Added margin-top and margin-bottom for spacing if body is justify-content: flex-start */
+     /* You might want to adjust these or use padding on body as primary spacing */
+     margin-top: auto; /* Helps to center vertically if content is shorter than viewport */
+     margin-bottom: auto; /* Helps to center vertically if content is shorter than viewport */
+     /* If content is guaranteed to be scrollable or always start top, these auto margins can be removed or set to specific values */
    }
+
+   /* If you want to ensure .content-wrapper is centered when content is shorter than viewport height, */
+   /* and at the top when it's scrollable, the margin-top/bottom: auto on .content-wrapper helps when body is justify-content: flex-start. */
+   /* Alternatively, you can remove margin-top/bottom: auto from .content-wrapper if the body padding is sufficient */
+   /* and the flex-start alignment is always desired for the top of the content wrapper. */
+
 
    .work-page-title { /* New style for the on-page title */
      font-family: 'EB Garamond', serif;
@@ -100,10 +115,13 @@
      padding: 0.6rem 1.1rem; /* Slightly refined padding */
      border-radius: 4px;
      transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-     position: absolute;
+     /* MODIFIED: To keep it fixed on the viewport */
+     position: fixed;
+     /* position: absolute; */ /* Original: scrolls with content */
      bottom: 2rem;
      left: 2rem;
-     z-index: 1; /* Ensure it's above vignette */
+     /* MODIFIED: Ensure it's above other content like vignette and content-wrapper if necessary */
+     z-index: 10;
    }
    .back-link:hover {
      color: white;
@@ -119,9 +137,7 @@
 
   <div class="content-wrapper">
     <h1 class="work-page-title fade-in" style="animation-delay: 0.2s;">Concerning the Vampire of the Vieux Carré</h1>
-
     <img src="css/Vampire Cover.PNG" alt="Cover for Concerning the Vampire of the Vieux Carré" class="cover-image fade-in" style="animation-delay: 0.7s;" />
-    
     <p class="status-text fade-in" style="animation-delay: 1.2s;">In Editorial</p>
   </div>
 
