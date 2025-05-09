@@ -2,54 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: css:; connect-src https://api.web3forms.com; frame-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 | Elias Grove</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <title>Concerning the Vampire of the Vieux Carré | Elias Grove</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'EB Garamond', serif;
-      background-image: url('css/The Scream.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: black;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 2rem;
-    }
+   html {
+     scroll-behavior: smooth;
+   }
+   body {
+     font-family: 'Crimson Pro', serif;
+     background-color: #000000; /* Black background */
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     margin: 0;
+     padding: 2rem;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+     cursor: url('css/nugget.png') 16 16, auto; /* Assuming nugget.png is in your css folder */
+     overflow: hidden; /* Prevent scrollbars if content fits */
+   }
+   h1, h2, h3 { /* Retain for potential future use, consistent font */
+     font-family: 'EB Garamond', serif;
+   }
+   .content-wrapper {
+     text-align: center;
+     max-width: 900px; /* Max width for the content */
+     width: 100%;
+   }
+   .cover-image {
+     max-width: 500px; /* Adjust as needed, e.g., based on your image aspect ratio */
+     width: 80%;       /* Responsive width */
+     max-height: 70vh; /* Prevent image from being too tall */
+     object-fit: contain; /* Ensures image aspect ratio is maintained */
+     margin-bottom: 1.5rem; /* Space between image and text */
+     border-radius: 4px; /* Optional: slight rounding of corners */
+     box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+   }
+   .status-text {
+     font-family: 'Crimson Pro', serif;
+     font-size: 1.75rem; /* Slightly larger, adjust as you like */
+     font-style: italic;
+     color: #e0e0e0; /* Slightly softer white */
+     margin-top: 1rem;
+   }
+   .fade-in {
+     opacity: 0;
+     animation: fadeInAnimation ease 2.5s forwards;
+   }
+   @keyframes fadeInAnimation {
+     0% { opacity: 0; transform: translateY(10px); }
+     100% { opacity: 1; transform: translateY(0); }
+   }
 
-    h1 {
-      font-size: 6rem;
-      margin-bottom: 1rem;
-    }
+   /* Style for a link back to the main page, if you want one */
+   .back-link {
+     font-family: 'Crimson Pro', serif;
+     font-size: 1rem;
+     color: #aaa;
+     text-decoration: none;
+     border: 1px solid #555;
+     padding: 0.5rem 1rem;
+     border-radius: 4px;
+     transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+     position: absolute; /* Position it */
+     bottom: 2rem;
+     left: 2rem;
+   }
+   .back-link:hover {
+     color: white;
+     border-color: #888;
+     transform: translateY(-2px);
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+   }
 
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    a {
-      font-size: 1.125rem;
-      text-decoration: underline;
-      color: #ccc;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: white;
-    }
   </style>
 </head>
 <body>
-  <h1>404</h1>
-  <p>𐌽𐌴 𐌷𐌴𐌹𐌻𐍃, 𐌰𐌹𐍃𐍄𐌰𐌼𐍃 𐌸𐌹𐌼𐌴</p>
-  <a href="index.html">← Return to the beginning</a>
+
+  <div class="content-wrapper">
+    <img src="css/Vampire Cover.PNG" alt="Cover for Concerning the Vampire of the Vieux Carré" class="cover-image fade-in" />
+    <p class="status-text fade-in" style="animation-delay: 0.7s;">In Editorial</p>
+  </div>
+
+  <a href="index.html" class="back-link fade-in" style="animation-delay: 1.4s;">&larr; Back to Works</a>
+
 </body>
 </html>
