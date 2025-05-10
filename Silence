@@ -2,54 +2,279 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.web3forms.com; frame-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 | Elias Grove</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <title>The Nugget | Elias Grove</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'EB Garamond', serif;
-      background-image: url('css/The Scream.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: black;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 2rem;
-    }
+   html {
+     scroll-behavior: smooth;
+   }
+   body {
+     font-family: 'Crimson Pro', serif;
+     background-color: #000000; /* Black background */
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     margin: 0;
+     padding: 2rem;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+     cursor: url('css/nugget.png') 16 16, auto; /* Assuming nugget.png is in your css folder */
+     overflow-x: hidden; 
+     position: relative; /* For vignette pseudo-element */
+   }
+   /* Subtle Vignette Effect */
+   body::before {
+     content: "";
+     position: fixed;
+     top: 0; left: 0; right: 0; bottom: 0;
+     box-shadow: inset 0 0 130px 35px rgba(0,0,0,0.6);
+     pointer-events: none; /* Allows clicks to pass through */
+     z-index: 0; /* Behind content */
+   }
+   h1, h2, h3 {
+     font-family: 'EB Garamond', serif;
+   }
+   .content-wrapper {
+     text-align: center;
+     max-width: 900px;
+     width: 100%;
+     position: relative; /* To ensure it's above the vignette pseudo-element */
+     z-index: 1;
+   }
+   .work-page-title { /* Style for the on-page title */
+     font-family: 'EB Garamond', serif;
+     font-size: 2.75rem; /* Adjust size as you like */
+     font-weight: 600;
+     color: #e9e9e9; /* Slightly off-white, bright */
+     margin-bottom: 2.5rem; /* Space before the poems */
+     line-height: 1.3;
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* More pronounced shadow for title */
+   }
+   
+   /* Poetry specific styles */
+   .poems-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+     max-height: 70vh;
+     overflow-y: auto;
+     padding-right: 20px; /* Space for scrollbar */
+   }
 
-    h1 {
-      font-size: 6rem;
-      margin-bottom: 1rem;
-    }
+   .poem {
+     margin-bottom: 4rem;
+     max-width: 600px;
+     width: 100%;
+     text-align: left;
+     opacity: 0;
+     animation: fadeInAnimation ease 1.5s forwards;
+   }
 
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
+   .poem-title {
+     font-family: 'EB Garamond', serif;
+     font-size: 1.5rem;
+     color: #e9e9e9;
+     margin-bottom: 1rem;
+     text-align: center;
+   }
 
-    a {
-      font-size: 1.125rem;
-      text-decoration: underline;
-      color: #ccc;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: white;
-    }
+   .poem-content {
+     font-family: 'Crimson Pro', serif;
+     font-size: 1.1rem;
+     line-height: 1.6;
+     white-space: pre-line; /* Preserves line breaks */
+     color: #d0d0d0;
+   }
+   
+   /* Scrollbar styling */
+   .poems-container::-webkit-scrollbar {
+     width: 8px;
+   }
+   
+   .poems-container::-webkit-scrollbar-track {
+     background: rgba(0, 0, 0, 0.2);
+     border-radius: 10px;
+   }
+   
+   .poems-container::-webkit-scrollbar-thumb {
+     background: rgba(255, 255, 255, 0.3);
+     border-radius: 10px;
+   }
+   
+   .poems-container::-webkit-scrollbar-thumb:hover {
+     background: rgba(255, 255, 255, 0.5);
+   }
+   
+   .status-text {
+     font-family: 'Crimson Pro', serif;
+     font-size: 1.35rem; /* Adjusted size */
+     font-style: italic;
+     color: #b0b0b0; /* More subtle grey */
+     margin-top: 2rem; /* Space from poems container */
+   }
+   
+   .fade-in {
+     opacity: 0;
+     animation: fadeInAnimation ease 2.2s forwards; /* Slightly faster overall animation */
+   }
+   
+   @keyframes fadeInAnimation {
+     0% { opacity: 0; transform: translateY(15px); }
+     100% { opacity: 1; transform: translateY(0); }
+   }
+   
+   /* Navigation link at bottom */
+   .home-link {
+     font-family: 'EB Garamond', serif;
+     color: #a0a0a0;
+     text-decoration: none;
+     position: fixed;
+     bottom: 2rem;
+     font-size: 1.1rem;
+     transition: color 0.3s ease, transform 0.3s ease;
+   }
+   
+   .home-link:hover {
+     color: white;
+     transform: translateY(-3px);
+   }
+   
+   /* Staggered fade-in delays */
+   .delay-1 { animation-delay: 0.2s; }
+   .delay-2 { animation-delay: 0.7s; }
+   .delay-3 { animation-delay: 1.2s; }
+   .delay-4 { animation-delay: 1.7s; }
+   .delay-5 { animation-delay: 2.2s; }
+   .delay-6 { animation-delay: 2.7s; }
+   .delay-7 { animation-delay: 3.2s; }
   </style>
 </head>
 <body>
-  <h1>404</h1>
-  <p>𐌽𐌴 𐌷𐌴𐌹𐌻𐍃, 𐌰𐌹𐍃𐍄𐌰𐌼𐍃 𐌸𐌹𐌼𐌴</p>
-  <a href="index.html">← Return to the beginning</a>
+  <div class="content-wrapper">
+    <h1 class="work-page-title fade-in delay-1">The Nugget</h1>
+    
+    <div class="poems-container fade-in delay-2">
+      <div class="poem">
+        <h2 class="poem-title">VIII - Sisyphus</h2>
+        <div class="poem-content">
+Always your suffering will remind the human soul
+That no burden will be heavier
+Than the weight of a past,
+That which will never be forgotten.
+Life, fate, quickly turn the most simple smile into fallen tears,
+But what life would life have without lost hopes?
+Man awakens to life
+Only when it is already lost.
+        </div>
+      </div>
+      
+      <div class="poem">
+        <h2 class="poem-title">XIV</h2>
+        <div class="poem-content">
+The light song of a child sounds
+Through the quiet night,
+And I already feel the vague hope
+That one can still be happy.
+Like the inconsistency of a verse,
+The eternal mystery of life envelops the soul
+With the useless weight
+Of itself.
+How I envy that song of yours through the cold night,
+Child who sings to me without knowing,
+I envy you for being content,
+Being content just by being.
+        </div>
+      </div>
+      
+      <div class="poem">
+        <h2 class="poem-title">XXIV</h2>
+        <div class="poem-content">
+How many scorching deserts will I have to cross,
+How many times walk through worlds that no one has ever seen,
+How many torments will I have to go through,
+To have a brief moment of silence?
+        </div>
+      </div>
+      
+      <div class="poem">
+        <h2 class="poem-title">XXXII</h2>
+        <div class="poem-content">
+Alone I walk to the darkness,
+Deep into the shadows of myself.
+How soft, how brief,
+Life gives her sweet fragrance.
+Sing, sing along
+By the dark night,
+Sing the glory of a fight
+That I have lost. Sing that sad song.
+Sing that alone I walk that lonely path
+Where the moon is my only company.
+Nothing to hear, to feel, nothing to see,
+Only the certain promisse of death.
+So I fool the very time,
+Life itself! Even if I know
+That I fool nothing but myself, let me sing my poor verse,
+Let me be without sorrow.
+        </div>
+      </div>
+      
+      <div class="poem">
+        <h2 class="poem-title">IX</h2>
+        <div class="poem-content">
+Lisbon of tired body,
+While you bind to distant
+Memories that still gaze of yours,
+You have me walking your streets in the morning.
+From infinity sounds the brief rumor
+Of the morning. Hopes and useless waits
+The light wind carries to me once again
+Through the beautiful dawn of wheat fields,
+And I feel eternal peace in everything I look at,
+For from life I want nothing but what life has to give me,
+Everything else is a dream,
+And I am tired of dreaming.
+        </div>
+      </div>
+      
+      <div class="poem">
+        <h2 class="poem-title">XXII</h2>
+        <div class="poem-content">
+After walking through life in this state
+And from fatigue,
+After what has already been lost
+And today is verse.
+After the wait
+And being alone,
+After the life that had ended,
+What will I be more than dust?
+Over the vague murmur of life,
+The Eternal scream of time that makes it into nothing.
+        </div>
+      </div>
+    </div>
+    
+    <p class="status-text fade-in delay-3">poetic fragments</p>
+  </div>
+  
+  <a href="index.html" class="home-link fade-in delay-3">← return home</a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add animation classes to poems for a staggered appearance
+      const poems = document.querySelectorAll('.poem');
+      poems.forEach((poem, index) => {
+        poem.classList.add('fade-in');
+        poem.classList.add(`delay-${index + 2}`); // Start delays after title animation
+      });
+    });
+  </script>
 </body>
 </html>
