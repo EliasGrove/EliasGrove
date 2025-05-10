@@ -6,7 +6,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Nugget | Elias Grove</title> {/* UPDATED for The Nugget */}
+  <title>The Nugget | Elias Grove</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -29,7 +29,6 @@
      overflow: hidden; /* Prevent scrollbars */
      position: relative; /* For vignette pseudo-element */
    }
-
    /* Subtle Vignette Effect */
    body::before {
      content: "";
@@ -39,7 +38,6 @@
      pointer-events: none; /* Allows clicks to pass through */
      z-index: 0; /* Behind content */
    }
-
    h1, h2, h3 {
      font-family: 'EB Garamond', serif;
    }
@@ -50,7 +48,6 @@
      position: relative; /* To ensure it's above the vignette pseudo-element */
      z-index: 1;
    }
-
    .work-page-title { /* Style for the on-page title */
      font-family: 'EB Garamond', serif;
      font-size: 2.75rem; /* Adjust size as you like */
@@ -60,7 +57,6 @@
      line-height: 1.3;
      text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* More pronounced shadow for title */
    }
-
    .cover-image {
      display: block;
      margin-left: auto;
@@ -73,7 +69,6 @@
      border-radius: 4px;
      box-shadow: 0 8px 20px rgba(0,0,0,0.35); /* Slightly enhanced shadow */
    }
-
    .status-text {
      font-family: 'Crimson Pro', serif;
      font-size: 1.35rem; /* Adjusted size */
@@ -81,10 +76,51 @@
      color: #b0b0b0; /* More subtle grey */
      margin-top: 1rem; /* Space from image (or from title if image is removed) */
    }
-
    .fade-in {
      opacity: 0;
      animation: fadeInAnimation ease 2.2s forwards; /* Slightly faster overall animation */
    }
    @keyframes fadeInAnimation {
-     0% { opacity: 0; transform: translateY(15px);
+     0% { opacity: 0; transform: translateY(15px); }
+     100% { opacity: 1; transform: translateY(0); }
+   }
+   
+   /* Navigation link at bottom */
+   .home-link {
+     font-family: 'EB Garamond', serif;
+     color: #a0a0a0;
+     text-decoration: none;
+     position: fixed;
+     bottom: 2rem;
+     font-size: 1.1rem;
+     transition: color 0.3s ease, transform 0.3s ease;
+   }
+   .home-link:hover {
+     color: white;
+     transform: translateY(-3px);
+   }
+   
+   /* Staggered fade-in delays */
+   .delay-1 { animation-delay: 0.2s; }
+   .delay-2 { animation-delay: 0.7s; }
+   .delay-3 { animation-delay: 1.2s; }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1 class="work-page-title fade-in delay-1">The Nugget</h1>
+    
+    <img src="css/6DACA5E7-D708-4F7D-9032-E83E0D9E609E.jpg" alt="The Nugget - Cover Image" class="cover-image fade-in delay-2">
+    
+    <p class="status-text fade-in delay-3">querying</p>
+  </div>
+  
+  <a href="index.html" class="home-link fade-in delay-3">← return home</a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Any additional scripts can go here
+    });
+  </script>
+</body>
+</html>
