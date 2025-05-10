@@ -12,6 +12,7 @@
   <style>
    html {
      scroll-behavior: smooth;
+     height: 100%;
    }
    body {
      font-family: 'Crimson Pro', serif;
@@ -20,14 +21,15 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     justify-content: center;
+     justify-content: flex-start; /* Changed to allow scrolling */
      min-height: 100vh;
      margin: 0;
      padding: 2rem;
      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-     cursor: url('css/nugget.png') 16 16, auto; /* Assuming nugget.png is in your css folder */
-     overflow: hidden; /* Prevent scrollbars */
+     cursor: url('css/nugget.png') 16 16, auto;
+     overflow-y: auto; /* Enable vertical scrolling */
      position: relative; /* For vignette pseudo-element */
+     -webkit-overflow-scrolling: touch; /* Improve mobile scrolling */
    }
    /* Subtle Vignette Effect */
    body::before {
@@ -47,6 +49,9 @@
      width: 100%;
      position: relative; /* To ensure it's above the vignette pseudo-element */
      z-index: 1;
+     padding-bottom: 4rem; /* Space for fixed button */
+     margin-top: auto;
+     margin-bottom: auto;
    }
    .work-page-title { /* Style for the on-page title */
      font-family: 'EB Garamond', serif;
@@ -67,14 +72,24 @@
      object-fit: contain;
      margin-bottom: 2rem; /* Adjusted space between image and status text */
      border-radius: 4px;
-     box-shadow: 0 8px 20px rgba(0,0,0,0.35); /* Slightly enhanced shadow */
+     /* Enhanced highlight and shadow for the cover image */
+     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1), 0 0 5px rgba(255, 255, 255, 0.1), 0 0 20px rgba(120, 120, 120, 0.2);
+     /* Slight raise effect with transform */
+     transform: translateY(-5px);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   .cover-image:hover {
+     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15), 0 0 8px rgba(255, 255, 255, 0.15), 0 0 25px rgba(150, 150, 150, 0.25);
+     transform: translateY(-8px);
    }
    .status-text {
      font-family: 'Crimson Pro', serif;
      font-size: 1.35rem; /* Adjusted size */
      font-style: italic;
      color: #b0b0b0; /* More subtle grey */
-     margin-top: 1rem; /* Space from image (or from title if image is removed) */
+     margin-top: 2rem; /* Increased space from image */
+     margin-bottom: 1rem; /* Ensure space below text on mobile */
+     letter-spacing: 0.03em; /* Slightly increase letter spacing for better readability */
    }
    .fade-in {
      opacity: 0;
@@ -85,25 +100,70 @@
      100% { opacity: 1; transform: translateY(0); }
    }
    
-   /* Navigation link at bottom */
-   .home-link {
-     font-family: 'EB Garamond', serif;
-     color: #a0a0a0;
+   /* Back link - styled like the first page */
+   .back-link {
+     font-family: 'Crimson Pro', serif;
+     font-size: 1rem;
+     color: #aaa;
      text-decoration: none;
+     border: 1px solid #555;
+     padding: 0.75rem 1.25rem; /* Increased padding for better touch target */
+     border-radius: 4px;
+     transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
      position: fixed;
      bottom: 2rem;
-     font-size: 1.1rem;
-     transition: color 0.3s ease, transform 0.3s ease;
+     left: 2rem;
+     z-index: 10;
+     letter-spacing: 0.05em; /* Improve letter spacing */
+     line-height: 1.2; /* Improve line height */
    }
-   .home-link:hover {
+   .back-link:hover {
      color: white;
-     transform: translateY(-3px);
+     border-color: #888;
+     background-color: rgba(255,255,255,0.05); /* Subtle hover background */
+     transform: translateY(-2px);
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
    }
    
    /* Staggered fade-in delays */
    .delay-1 { animation-delay: 0.2s; }
    .delay-2 { animation-delay: 0.7s; }
    .delay-3 { animation-delay: 1.2s; }
+   .delay-4 { animation-delay: 1.7s; }
+
+   /* Mobile-specific adjustments */
+   @media (max-width: 768px) {
+     .work-page-title {
+       font-size: 2.25rem; /* Slightly smaller title on mobile */
+     }
+     
+     .cover-image {
+       width: 90%; /* Slightly wider image on mobile */
+       margin-bottom: 2.5rem; /* More space below image */
+     }
+     
+     .status-text {
+       margin-top: 1rem;
+       margin-bottom: 3rem; /* More space below status text */
+       line-height: 1.5; /* Improved line height on mobile */
+     }
+     
+     .back-link {
+       padding: 0.8rem 1.3rem; /* Larger touch target */
+       bottom: 1.5rem;
+       left: 50%;
+       transform: translateX(-50%); /* Center the button */
+       white-space: nowrap; /* Prevent wrapping */
+     }
+     
+     .back-link:hover {
+       transform: translateX(-50%) translateY(-2px); /* Maintain centering while applying hover effect */
+     }
+     
+     body {
+       padding-bottom: 5rem; /* Extra padding at bottom for fixed link */
+     }
+   }
   </style>
 </head>
 <body>
@@ -115,7 +175,7 @@
     <p class="status-text fade-in delay-3">querying</p>
   </div>
   
-  <a href="index.html" class="home-link fade-in delay-3">← return home</a>
+  <a href="index.html" class="back-link fade-in delay-4">&larr; return home</a>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
