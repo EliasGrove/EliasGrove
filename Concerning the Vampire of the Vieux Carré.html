@@ -12,6 +12,7 @@
   <style>
    html {
      scroll-behavior: smooth;
+     height: 100%;
    }
    body {
      font-family: 'Crimson Pro', serif;
@@ -20,18 +21,15 @@
      display: flex;
      flex-direction: column;
      align-items: center; /* Keeps content horizontally centered */
-     /* MODIFIED: Align content to the start for better scrolling behavior */
-     justify-content: flex-start;
-     /* justify-content: center; */ /* Original: caused issues with scroll starting position */
      min-height: 100vh;
      margin: 0;
-     padding: 2rem; /* This padding will now be respected at the top and bottom of scrollable content */
+     padding: 2rem;
      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
      cursor: url('css/nugget.png') 16 16, auto;
-     /* MODIFIED: Allow vertical scroll if content overflows */
+     /* Enable scrolling */
      overflow-y: auto;
-     /* overflow: hidden; */ /* Original: Prevented scrollbars - THIS WAS THE MAIN ISSUE */
      position: relative; /* For vignette pseudo-element */
+     -webkit-overflow-scrolling: touch; /* Improve mobile scrolling */
    }
 
    /* Subtle Vignette Effect */
@@ -53,18 +51,8 @@
      width: 100%;
      position: relative; /* To ensure it's above the vignette pseudo-element */
      z-index: 1;
-     /* Added margin-top and margin-bottom for spacing if body is justify-content: flex-start */
-     /* You might want to adjust these or use padding on body as primary spacing */
-     margin-top: auto; /* Helps to center vertically if content is shorter than viewport */
-     margin-bottom: auto; /* Helps to center vertically if content is shorter than viewport */
-     /* If content is guaranteed to be scrollable or always start top, these auto margins can be removed or set to specific values */
+     padding-bottom: 4rem; /* Additional padding to ensure space for fixed back button */
    }
-
-   /* If you want to ensure .content-wrapper is centered when content is shorter than viewport height, */
-   /* and at the top when it's scrollable, the margin-top/bottom: auto on .content-wrapper helps when body is justify-content: flex-start. */
-   /* Alternatively, you can remove margin-top/bottom: auto from .content-wrapper if the body padding is sufficient */
-   /* and the flex-start alignment is always desired for the top of the content wrapper. */
-
 
    .work-page-title { /* New style for the on-page title */
      font-family: 'EB Garamond', serif;
@@ -86,7 +74,16 @@
      object-fit: contain;
      margin-bottom: 2rem; /* Adjusted space between image and status text */
      border-radius: 4px;
-     box-shadow: 0 8px 20px rgba(0,0,0,0.35); /* Slightly enhanced shadow */
+     /* Enhanced highlight and shadow for the cover image */
+     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1), 0 0 5px rgba(255, 255, 255, 0.1), 0 0 20px rgba(120, 120, 120, 0.2);
+     /* Slight raise effect with transform */
+     transform: translateY(-5px);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   .cover-image:hover {
+     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15), 0 0 8px rgba(255, 255, 255, 0.15), 0 0 25px rgba(150, 150, 150, 0.25);
+     transform: translateY(-8px);
    }
 
    .status-text {
@@ -94,7 +91,9 @@
      font-size: 1.35rem; /* Adjusted size */
      font-style: italic;
      color: #b0b0b0; /* More subtle grey */
-     margin-top: 1rem; /* Space from image (or from title if image is removed) */
+     margin-top: 2rem; /* Increased space from image */
+     margin-bottom: 1rem; /* Ensure space below text on mobile */
+     letter-spacing: 0.03em; /* Slightly increase letter spacing for better readability */
    }
 
    .fade-in {
@@ -112,16 +111,15 @@
      color: #aaa;
      text-decoration: none;
      border: 1px solid #555;
-     padding: 0.6rem 1.1rem; /* Slightly refined padding */
+     padding: 0.75rem 1.25rem; /* Increased padding for better touch target */
      border-radius: 4px;
      transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-     /* MODIFIED: To keep it fixed on the viewport */
      position: fixed;
-     /* position: absolute; */ /* Original: scrolls with content */
      bottom: 2rem;
      left: 2rem;
-     /* MODIFIED: Ensure it's above other content like vignette and content-wrapper if necessary */
      z-index: 10;
+     letter-spacing: 0.05em; /* Improve letter spacing */
+     line-height: 1.2; /* Improve line height */
    }
    .back-link:hover {
      color: white;
@@ -131,6 +129,39 @@
      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
    }
 
+   /* Mobile-specific adjustments */
+   @media (max-width: 768px) {
+     .work-page-title {
+       font-size: 2.25rem; /* Slightly smaller title on mobile */
+     }
+     
+     .cover-image {
+       width: 90%; /* Slightly wider image on mobile */
+       margin-bottom: 2.5rem; /* More space below image */
+     }
+     
+     .status-text {
+       margin-top: 1rem;
+       margin-bottom: 3rem; /* More space below status text */
+       line-height: 1.5; /* Improved line height on mobile */
+     }
+     
+     .back-link {
+       padding: 0.8rem 1.3rem; /* Larger touch target */
+       bottom: 1.5rem;
+       left: 50%;
+       transform: translateX(-50%); /* Center the button */
+       white-space: nowrap; /* Prevent wrapping */
+     }
+     
+     .back-link:hover {
+       transform: translateX(-50%) translateY(-2px); /* Maintain centering while applying hover effect */
+     }
+     
+     body {
+       padding-bottom: 5rem; /* Extra padding at bottom for fixed link */
+     }
+   }
   </style>
 </head>
 <body>
