@@ -66,20 +66,24 @@
      display: block;
      margin-left: auto;
      margin-right: auto;
-     max-width: 500px;
+     max-width: 400px; /* Reduced from 500px for better proportions */
      width: 80%;
-     max-height: 65vh; /* Adjusted slightly if title takes up space */
-     object-fit: contain;
-     margin-bottom: 2rem; /* Adjusted space between image and status text */
-     border-radius: 4px;
-     /* Enhanced highlight and shadow for the cover image */
-     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1), 0 0 5px rgba(255, 255, 255, 0.1), 0 0 20px rgba(120, 120, 120, 0.2);
+     max-height: 65vh;
+     object-fit: cover; /* Changed from contain to cover */
+     margin-bottom: 2rem;
+     border-radius: 8px; /* Increased from 4px for softer edges */
+     /* Adding a white border to separate from black background */
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     /* Enhanced shadow for better visibility against black background */
+     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15), 0 0 5px rgba(255, 255, 255, 0.15), 0 0 20px rgba(150, 150, 150, 0.3);
      /* Slight raise effect with transform */
      transform: translateY(-5px);
      transition: transform 0.3s ease, box-shadow 0.3s ease;
+     /* Ensure aspect ratio is maintained for book cover */
+     aspect-ratio: 1410 / 2250; /* Using the exact dimensions you provided */
    }
    .cover-image:hover {
-     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15), 0 0 8px rgba(255, 255, 255, 0.15), 0 0 25px rgba(150, 150, 150, 0.25);
+     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.2), 0 0 25px rgba(150, 150, 150, 0.35);
      transform: translateY(-8px);
    }
    .status-text {
@@ -138,7 +142,8 @@
      }
      
      .cover-image {
-       width: 90%; /* Slightly wider image on mobile */
+       max-width: 280px; /* Smaller on mobile for better fit */
+       width: 85%;
        margin-bottom: 2.5rem; /* More space below image */
      }
      
@@ -170,7 +175,7 @@
   <div class="content-wrapper">
     <h1 class="work-page-title fade-in delay-1">The Nugget</h1>
     
-    <img src="css/6DACA5E7-D708-4F7D-9032-E83E0D9E609E.jpg" alt="The Nugget - Cover Image" class="cover-image fade-in delay-2">
+    <img src="css/6DACA5E7-D708-4F7D-9032-E83E0D9E609E.jpg" alt="The Nugget - Book Cover" class="cover-image fade-in delay-2">
     
     <p class="status-text fade-in delay-3">querying</p>
   </div>
