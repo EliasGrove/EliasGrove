@@ -64,25 +64,30 @@
      text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* More pronounced shadow for title */
    }
 
+   /* Book cover container to ensure proper display */
+   .book-cover-container {
+     width: 100%;
+     max-width: 400px;
+     margin: 0 auto;
+     position: relative;
+     padding-bottom: 1rem;
+   }
+   
    .cover-image {
      display: block;
-     margin-left: auto;
-     margin-right: auto;
-     max-width: 500px;
-     width: 80%;
-     max-height: 65vh; /* Adjusted slightly if title takes up space */
-     object-fit: contain;
-     margin-bottom: 2rem; /* Adjusted space between image and status text */
-     border-radius: 4px;
-     /* Enhanced highlight and shadow for the cover image */
-     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1), 0 0 5px rgba(255, 255, 255, 0.1), 0 0 20px rgba(120, 120, 120, 0.2);
-     /* Slight raise effect with transform */
+     width: 100%;
+     height: auto; /* Allow natural height */
+     object-fit: contain; /* Show entire image */
+     border-radius: 8px;
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15), 0 0 5px rgba(255, 255, 255, 0.15), 0 0 20px rgba(150, 150, 150, 0.3);
      transform: translateY(-5px);
      transition: transform 0.3s ease, box-shadow 0.3s ease;
+     background-color: #000; /* Ensure black background if image has transparency */
    }
 
    .cover-image:hover {
-     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15), 0 0 8px rgba(255, 255, 255, 0.15), 0 0 25px rgba(150, 150, 150, 0.25);
+     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.2), 0 0 25px rgba(150, 150, 150, 0.35);
      transform: translateY(-8px);
    }
 
@@ -129,15 +134,20 @@
      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
    }
 
+   /* Staggered fade-in delays */
+   .delay-1 { animation-delay: 0.2s; }
+   .delay-2 { animation-delay: 0.7s; }
+   .delay-3 { animation-delay: 1.2s; }
+   .delay-4 { animation-delay: 1.7s; }
+
    /* Mobile-specific adjustments */
    @media (max-width: 768px) {
      .work-page-title {
        font-size: 2.25rem; /* Slightly smaller title on mobile */
      }
      
-     .cover-image {
-       width: 90%; /* Slightly wider image on mobile */
-       margin-bottom: 2.5rem; /* More space below image */
+     .book-cover-container {
+       max-width: 280px; /* Smaller on mobile for better fit */
      }
      
      .status-text {
@@ -167,12 +177,16 @@
 <body>
 
   <div class="content-wrapper">
-    <h1 class="work-page-title fade-in" style="animation-delay: 0.2s;">Concerning the Vampire of the Vieux Carré</h1>
-    <img src="css/Vampire Cover.jpg" alt="Cover for Concerning the Vampire of the Vieux Carré" class="cover-image fade-in" style="animation-delay: 0.7s;" />
-    <p class="status-text fade-in" style="animation-delay: 1.2s;">In Editorial</p>
+    <h1 class="work-page-title fade-in delay-1">Concerning the Vampire of the Vieux Carré</h1>
+    
+    <div class="book-cover-container fade-in delay-2">
+      <img src="css/Vampire Cover.jpg" alt="Cover for Concerning the Vampire of the Vieux Carré" class="cover-image">
+    </div>
+    
+    <p class="status-text fade-in delay-3">In Editorial</p>
   </div>
 
-  <a href="index.html" class="back-link fade-in" style="animation-delay: 1.7s;">&larr; Back to Works</a>
+  <a href="index.html" class="back-link fade-in delay-4">&larr; Back to Works</a>
 
 </body>
 </html>
